@@ -1,0 +1,11 @@
+@use '../../style/utils/variables.scss' as *;
+
+.buttonContainer {
+  padding: 16px 24px;
+  border: 0;
+  border-radius: $border-md;
+  color: $white-50;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 18px;
+}

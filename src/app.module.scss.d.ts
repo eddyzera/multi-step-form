@@ -1,4 +1,4 @@
 declare const classNames: {
-  readonly text: "text";
+  readonly appContainer: "appContainer";
 };
 export = classNames;
