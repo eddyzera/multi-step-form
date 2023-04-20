@@ -1,0 +1,108 @@
+@use '../../style//utils/variables.scss' as *;
+
+.stepContainer {
+  border-radius: $border-md;
+  background-color: $purple-900;
+
+  padding-top: 40px;
+  padding-left: 32px;
+  padding-right: 89px;
+
+  position: relative;
+  max-height: 100%;
+  max-width: 100%;
+  width: 274px;
+  height: 568px;
+  overflow: hidden;
+
+  &::before {
+    content: ' ';
+    background-image: url('../../assets/img/svg/oval-full.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    width: 425px;
+    height: 393px;
+
+    display: block;
+    position: absolute;
+    bottom: -110px;
+    left: -101px;
+  }
+}
+
+.steps {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+
+  cursor: pointer;
+
+  & + .steps {
+    margin-top: 32px;
+  }
+}
+
+.stepNumber {
+  height: 33px;
+  width: 33px;
+
+  border-radius: 100%;
+  background-color: transparent;
+  border: 1px solid $white-50;
+
+  color: $white-50;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 1px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepNumberActive {
+  height: 33px;
+  width: 33px;
+
+  border-radius: 100%;
+  background-color: $blue-200;
+  border: 0;
+
+  color: $blue-900;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 1px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepContent {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  span {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: $blue-300;
+
+    margin-bottom: 4px;
+  }
+
+  p {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $white-50;
+  }
+}

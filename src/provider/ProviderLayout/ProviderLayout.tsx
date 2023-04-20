@@ -1,9 +1,11 @@
 import React from 'react'
+import styles from  './ProviderLayout.module.scss'
+import { Steps } from '../../components'
 
 export const ProviderLayout: React.FunctionComponent = () => {
   return (
-    <div>
-      
-    </div>
+    <section className={styles.providerLayoutContainer}>
+      <Steps />
+    </section>
   )
 }

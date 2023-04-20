@@ -1,12 +1,11 @@
 import React from 'react'
 import styles from './App.module.scss'
+import { ProviderLayout } from './provider'
 
 export const App: React.FunctionComponent = () => {
   return (
     <div className={styles.appContainer}>
-      <section>
-        <h1>hello world</h1>
-      </section>
+      <ProviderLayout />
     </div>
   )
 }

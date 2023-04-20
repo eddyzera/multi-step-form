@@ -1,0 +1,13 @@
+@use '../../style/utils/variables.scss' as *;
+
+.providerLayoutContainer {
+  background-color: $white-50;
+  border-radius: $border-md;
+  box-shadow: $box-shadow;
+
+  padding: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
