@@ -11,3 +11,9 @@
   align-items: center;
   gap: 100px;
 }
+.providerLayoutPage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 35px;
+}

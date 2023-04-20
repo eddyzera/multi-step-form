@@ -6,6 +6,9 @@ export const ProviderLayout: React.FunctionComponent = () => {
   return (
     <section className={styles.providerLayoutContainer}>
       <Steps />
+      <div className={styles.providerLayoutPage}>
+
+      </div>
     </section>
   )
 }
