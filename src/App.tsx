@@ -4,7 +4,7 @@ import { ProviderLayout } from './provider'
 
 export const App: React.FunctionComponent = () => {
   return (
-    <div className={styles.appContainer}>
+    <div className={styles.appContainer} data-testid="app">
       <ProviderLayout />
     </div>
   )
