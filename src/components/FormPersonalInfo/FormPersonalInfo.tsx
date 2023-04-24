@@ -39,7 +39,7 @@ export const FormPersonalInfo: React.FunctionComponent = () => {
         <input type="text" placeholder='e.g. +1 234 567 890' {...register('phone')} />
         {errors.phone && <span>{errors.phone.message}</span>}
       </div>
-      <div className={styles.submiteContainer}>
+      <div className={styles.submitContainer}>
         <Button label='Next Step' variant='blue' />
       </div>
     </form>
