@@ -1,6 +1,7 @@
 import React from 'react'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import styles from './FormPersonalInfo.module.scss'
 import { Button } from '../Button/Button'
@@ -18,8 +19,11 @@ export const FormPersonalInfo: React.FunctionComponent = () => {
     resolver: zodResolver(createPersonalInfoSchema)
   })
 
+  const navigate = useNavigate()
+
   const handlePersonalInfo = (data: CreatePersonalInformationFormData) => {
     console.log(data)
+    navigate('/select-plan')
   }
 
   return (
