@@ -29,6 +29,7 @@
     padding: 12px 16px;
     border: 1px solid $blue-100;
     width: 100%;
+    outline: none;
 
     border-radius: $border-sm;
 
@@ -43,10 +44,21 @@
   }
 }
 
+.errorContainer {
+  input {
+    border: 1px solid $red-900;
+  }
+}
+
 .submiteContainer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 
   margin-top: 92px;
+}
+
+.errorContent {
+  margin-top: 10px;
+  color: $red-900;
 }
