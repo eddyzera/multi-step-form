@@ -9,19 +9,23 @@ import { Button } from '../Button/Button'
 
 const createSelectPlanSchema = z.object({
   type: z.enum(['arcade', 'advanced', 'pro']),
-  switch: z.enum(['monthly', 'yearly'])
+  switch: z.enum(['monthly', 'yearly']),
 })
 
 type CreateSelectPlanFormData = z.infer<typeof createSelectPlanSchema>
 
 export const FormSelectPlan: React.FunctionComponent = () => {
-
-  const { handleSubmit, control,  watch, formState: { errors } } = useForm<CreateSelectPlanFormData>({
+  const {
+    handleSubmit,
+    control,
+    watch,
+    formState: { errors },
+  } = useForm<CreateSelectPlanFormData>({
     resolver: zodResolver(createSelectPlanSchema),
     defaultValues: {
       type: 'arcade',
-      switch: 'monthly'
-    }
+      switch: 'monthly',
+    },
   })
 
   const watchSwitch = watch('switch')
@@ -33,64 +37,69 @@ export const FormSelectPlan: React.FunctionComponent = () => {
 
   return (
     <form onSubmit={handleSubmit(handleCreatePlan)}>
-      <Controller 
+      <Controller
         control={control}
-        name='type' 
+        name="type"
         render={({ field }) => {
           return (
-              <RadioGroup.Root 
-                className={styles.radioGroupContainer} 
-                onValueChange={field.onChange}
-                value={field.value}
+            <RadioGroup.Root
+              className={styles.radioGroupContainer}
+              onValueChange={field.onChange}
+              value={field.value}
+            >
+              <RadioGroup.Item value="arcade" className={styles.radioGroupItem}>
+                <i className={`${styles.iconGroup} ${styles.arcadeIcon}`}></i>
+                <div className={styles.containerFlex}>
+                  <p>Arcade</p>
+                  <small>$9/mo</small>
+                </div>
+              </RadioGroup.Item>
+              <RadioGroup.Item
+                value="advanced"
+                className={styles.radioGroupItem}
               >
-                <RadioGroup.Item value="arcade" className={styles.radioGroupItem}>
-                  <i className={`${styles.iconGroup} ${styles.arcadeIcon}`}></i>
-                  <div className={styles.containerFlex}>
-                    <p>Arcade</p>
-                    <small>$9/mo</small>
-                  </div>
-                </RadioGroup.Item>
-                <RadioGroup.Item value="advanced" className={styles.radioGroupItem}>
-                  <i className={`${styles.iconGroup} ${styles.advancedIcon}`}></i>
-                  <div className={styles.containerFlex}>
-                    <p>Advanced</p>
-                    <small>$12/mo</small>
-                  </div>
-                </RadioGroup.Item>
-                <RadioGroup.Item value="pro" className={styles.radioGroupItem}>
-                  <i className={`${styles.iconGroup} ${styles.proIcon}`}></i>
-                  <div className={styles.containerFlex}>
-                    <p>Pro</p>
-                    <small>$15/mo</small>
-                  </div>
-                </RadioGroup.Item>
+                <i className={`${styles.iconGroup} ${styles.advancedIcon}`}></i>
+                <div className={styles.containerFlex}>
+                  <p>Advanced</p>
+                  <small>$12/mo</small>
+                </div>
+              </RadioGroup.Item>
+              <RadioGroup.Item value="pro" className={styles.radioGroupItem}>
+                <i className={`${styles.iconGroup} ${styles.proIcon}`}></i>
+                <div className={styles.containerFlex}>
+                  <p>Pro</p>
+                  <small>$15/mo</small>
+                </div>
+              </RadioGroup.Item>
             </RadioGroup.Root>
           )
         }}
       />
       <div className={styles.switchContainer}>
         <Controller
-          control={control} 
+          control={control}
           name="switch"
           render={({ field }) => {
             return (
               <>
-                <label 
-                  htmlFor="choose" 
-                  className={watchSwitch === 'monthly' ? styles.labelActive : ''}
-                > 
+                <label
+                  htmlFor="choose"
+                  className={
+                    watchSwitch === 'monthly' ? styles.labelActive : ''
+                  }
+                >
                   Monthly
                 </label>
-                  <Switch.Root
-                    className={styles.switchRoot}
-                    id="choose"
-                    onCheckedChange={(checked) => {
-                      field.onChange(checked ? 'yearly' : 'monthly')
-                    }}
-                    value={field.value}
-                  >
-                    <Switch.Thumb className={styles.switchThumb}  />
-                  </Switch.Root>
+                <Switch.Root
+                  className={styles.switchRoot}
+                  id="choose"
+                  onCheckedChange={(checked) => {
+                    field.onChange(checked ? 'yearly' : 'monthly')
+                  }}
+                  value={field.value}
+                >
+                  <Switch.Thumb className={styles.switchThumb} />
+                </Switch.Root>
                 <label
                   htmlFor="choose"
                   className={watchSwitch === 'yearly' ? styles.labelActive : ''}
@@ -103,8 +112,8 @@ export const FormSelectPlan: React.FunctionComponent = () => {
         />
       </div>
       <div className={styles.submitContainer}>
-        <Button label='Go Back' shape='anchor' />
-        <Button label='Next Step' variant='blue' />
+        <Button label="Go Back" shape="anchor" />
+        <Button label="Next Step" variant="blue" />
       </div>
     </form>
   )
