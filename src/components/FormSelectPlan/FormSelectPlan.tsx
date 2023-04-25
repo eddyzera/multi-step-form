@@ -5,11 +5,21 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { useForm, Controller } from 'react-hook-form'
 import styles from './FormSelectPlan.module.scss'
-import { Value } from 'sass'
+
+const createSelectPlanSchema = z.object({
+  type: z.enum(['arcade', 'advanced', 'pro']),
+})
+
+type CreateSelectPlanFormData = z.infer<typeof createSelectPlanSchema>
 
 export const FormSelectPlan: React.FunctionComponent = () => {
 
-  const { handleSubmit, control } = useForm()
+  const { handleSubmit, control } = useForm<CreateSelectPlanFormData>({
+    resolver: zodResolver(createSelectPlanSchema),
+    defaultValues: {
+      type: 'arcade'
+    }
+  })
 
   return (
     <form action="">
