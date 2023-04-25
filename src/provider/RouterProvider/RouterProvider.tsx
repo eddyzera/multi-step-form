@@ -6,8 +6,9 @@ import {
 import { ProviderLayout } from '../ProviderLayout/ProviderLayout'
 import { PersonalInfo } from '../../pages/PersonalInfo/PersonalInfo'
 import { SelectYourPlan } from '../../pages/SelectYourPlan/SelectYourPlan'
+import { PickAddOns } from '../../pages/PickAddOns/PickAddOns'
 
-export const ProviderRouter = () => {
+export const ProviderRouter: React.FunctionComponent = () => {
   const routerProvider = createBrowserRouter([
     {
       path: '/',
@@ -20,6 +21,10 @@ export const ProviderRouter = () => {
         {
           path: 'select-plan',
           element: <SelectYourPlan />,
+        },
+        {
+          path: 'pick-addons',
+          element: <PickAddOns />,
         },
       ],
     },
