@@ -1,0 +1,118 @@
+@use '../../style/utils/variables.scss' as *;
+
+.radioGroupContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 138px);
+  gap: 18px;
+}
+
+.radioGroupItem {
+  width: 100%;
+  border: 1px solid $blue-100;
+  border-radius: $border-sm;
+  padding-top: 20px;
+  padding-left: 16px;
+  padding-bottom: 16px;
+  cursor: pointer;
+
+  background-color: $white-50;
+
+  &[data-state='checked'] {
+    background-color: $gray-50;
+    border: 1px solid $purple-900;
+  }
+}
+
+.iconGroup {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.arcadeIcon {
+  background-image: url('../../assets/img/svg/arcade.svg');
+}
+
+.advancedIcon {
+  background-image: url('../../assets/img/svg/advanced.svg');
+}
+
+.proIcon {
+  background-image: url('../../assets/img/svg/pro.svg');
+}
+
+.containerFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  margin-top: 39px;
+
+  p {
+    margin-bottom: 7px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    color: $blue-900;
+  }
+
+  small {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: $gray-200;
+  }
+}
+
+.switchContainer {
+  border-radius: $border-sm;
+  background-color: $gray-50;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 140px;
+  margin-top: 32px;
+
+  label {
+    cursor: pointer;
+  }
+}
+
+.switchRoot {
+  width: 38px;
+  height: 20px;
+  background-color: $blue-900;
+  border-radius: 9999px;
+  position: relative;
+  border: 0;
+  -webkit-tap-highlight-color: $blue-900;
+  cursor: pointer;
+  margin: 0 24px;
+}
+
+.switchRoot[data-state='checked'] {
+  background-color: $blue-900;
+}
+
+.switchThumb {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 9999px;
+  transition: transform 100ms;
+  transform: translateX(2px);
+  will-change: transform;
+}
+
+.switchThumb[data-state='checked'] {
+  transform: translateX(19px);
+}
