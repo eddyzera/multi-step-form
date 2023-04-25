@@ -8,6 +8,7 @@ import styles from './FormSelectPlan.module.scss'
 
 const createSelectPlanSchema = z.object({
   type: z.enum(['arcade', 'advanced', 'pro']),
+  switch: z.enum(['monthly', 'yearly'])
 })
 
 type CreateSelectPlanFormData = z.infer<typeof createSelectPlanSchema>
@@ -21,8 +22,12 @@ export const FormSelectPlan: React.FunctionComponent = () => {
     }
   })
 
+  const handleCreatePlan = (data: CreateSelectPlanFormData) => {
+    console.log(data)
+  }
+
   return (
-    <form action="">
+    <form onSubmit={handleSubmit(handleCreatePlan)}>
       <Controller 
         control={control}
         name='type' 
@@ -59,11 +64,26 @@ export const FormSelectPlan: React.FunctionComponent = () => {
         }}
       />
       <div className={styles.switchContainer}>
-        <label htmlFor="choose">Monthly</label>
-        <Switch.Root className={styles.switchRoot} id="choose" onCheckedChange={(event) => console.log(event)}>
-          <Switch.Thumb className={styles.switchThumb}  />
-        </Switch.Root>
-        <label htmlFor="choose">Yearly</label>
+        <Controller
+          control={control} 
+          name="switch"
+          render={({ field }) => {
+            return (
+              <>
+                <label htmlFor="choose">Monthly</label>
+                  <Switch.Root
+                    className={styles.switchRoot}
+                    id="choose"
+                    onCheckedChange={field.onChange}
+                    value={field.value}
+                  >
+                    <Switch.Thumb className={styles.switchThumb}  />
+                  </Switch.Root>
+                <label htmlFor="choose">Yearly</label>
+              </>
+            )
+          }}
+        />
       </div>
     </form>
   )
