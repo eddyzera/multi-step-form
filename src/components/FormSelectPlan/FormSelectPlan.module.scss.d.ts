@@ -9,5 +9,7 @@ declare const classNames: {
   readonly switchContainer: "switchContainer";
   readonly switchRoot: "switchRoot";
   readonly switchThumb: "switchThumb";
+  readonly submitContainer: "submitContainer";
+  readonly anchor: "anchor";
 };
 export = classNames;

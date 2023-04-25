@@ -116,3 +116,22 @@
 .switchThumb[data-state='checked'] {
   transform: translateX(19px);
 }
+
+.submitContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 92px;
+}
+
+.anchor {
+  cursor: pointer;
+  border: 0;
+  color: $gray-200;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  background-color: transparent;
+}

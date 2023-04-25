@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { useForm, Controller } from 'react-hook-form'
 import styles from './FormSelectPlan.module.scss'
+import { Button } from '../Button/Button'
 
 const createSelectPlanSchema = z.object({
   type: z.enum(['arcade', 'advanced', 'pro']),
@@ -15,15 +16,17 @@ type CreateSelectPlanFormData = z.infer<typeof createSelectPlanSchema>
 
 export const FormSelectPlan: React.FunctionComponent = () => {
 
-  const { handleSubmit, control } = useForm<CreateSelectPlanFormData>({
+  const { handleSubmit, control, formState: { errors } } = useForm<CreateSelectPlanFormData>({
     resolver: zodResolver(createSelectPlanSchema),
     defaultValues: {
-      type: 'arcade'
+      type: 'arcade',
+      switch: 'monthly'
     }
   })
 
   const handleCreatePlan = (data: CreateSelectPlanFormData) => {
     console.log(data)
+    console.log(errors)
   }
 
   return (
@@ -74,7 +77,9 @@ export const FormSelectPlan: React.FunctionComponent = () => {
                   <Switch.Root
                     className={styles.switchRoot}
                     id="choose"
-                    onCheckedChange={field.onChange}
+                    onCheckedChange={(checked) => {
+                      field.onChange(checked ? 'yearly' : 'monthly')
+                    }}
                     value={field.value}
                   >
                     <Switch.Thumb className={styles.switchThumb}  />
@@ -84,6 +89,10 @@ export const FormSelectPlan: React.FunctionComponent = () => {
             )
           }}
         />
+      </div>
+      <div className={styles.submitContainer}>
+        <button className={styles.anchor}>Go Back</button>
+        <Button label='Next Step' variant='blue' />
       </div>
     </form>
   )
