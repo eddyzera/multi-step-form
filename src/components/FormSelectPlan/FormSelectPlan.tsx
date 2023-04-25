@@ -103,7 +103,7 @@ export const FormSelectPlan: React.FunctionComponent = () => {
         />
       </div>
       <div className={styles.submitContainer}>
-        <button className={styles.anchor}>Go Back</button>
+        <Button label='Go Back' shape='anchor' />
         <Button label='Next Step' variant='blue' />
       </div>
     </form>

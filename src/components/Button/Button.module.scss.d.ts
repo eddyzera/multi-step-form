@@ -1,6 +1,8 @@
 declare const classNames: {
-  readonly buttonContainer: "buttonContainer";
+  readonly button: "button";
+  readonly anchor: "anchor";
   readonly blue: "blue";
   readonly purple: "purple";
+  readonly transparent: "transparent";
 };
 export = classNames;
