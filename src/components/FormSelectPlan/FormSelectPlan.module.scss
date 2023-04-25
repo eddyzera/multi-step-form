@@ -83,14 +83,21 @@
 
   label {
     cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
   }
+}
+
+.labelActive {
+  color: $blue-900;
 }
 
 .switchRoot {
   width: 38px;
   height: 20px;
   background-color: $blue-900;
-  border-radius: 9999px;
+  border-radius: 10px;
   position: relative;
   border: 0;
   -webkit-tap-highlight-color: $blue-900;
@@ -107,9 +114,9 @@
   width: 12px;
   height: 12px;
   background-color: white;
-  border-radius: 9999px;
+  border-radius: 100%;
   transition: transform 100ms;
-  transform: translateX(2px);
+  transform: translateX(6px);
   will-change: transform;
 }
 

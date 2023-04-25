@@ -16,13 +16,15 @@ type CreateSelectPlanFormData = z.infer<typeof createSelectPlanSchema>
 
 export const FormSelectPlan: React.FunctionComponent = () => {
 
-  const { handleSubmit, control, formState: { errors } } = useForm<CreateSelectPlanFormData>({
+  const { handleSubmit, control,  watch, formState: { errors } } = useForm<CreateSelectPlanFormData>({
     resolver: zodResolver(createSelectPlanSchema),
     defaultValues: {
       type: 'arcade',
       switch: 'monthly'
     }
   })
+
+  const watchSwitch = watch('switch')
 
   const handleCreatePlan = (data: CreateSelectPlanFormData) => {
     console.log(data)
@@ -73,7 +75,12 @@ export const FormSelectPlan: React.FunctionComponent = () => {
           render={({ field }) => {
             return (
               <>
-                <label htmlFor="choose">Monthly</label>
+                <label 
+                  htmlFor="choose" 
+                  className={watchSwitch === 'monthly' ? styles.labelActive : ''}
+                > 
+                  Monthly
+                </label>
                   <Switch.Root
                     className={styles.switchRoot}
                     id="choose"
@@ -84,7 +91,12 @@ export const FormSelectPlan: React.FunctionComponent = () => {
                   >
                     <Switch.Thumb className={styles.switchThumb}  />
                   </Switch.Root>
-                <label htmlFor="choose">Yearly</label>
+                <label
+                  htmlFor="choose"
+                  className={watchSwitch === 'yearly' ? styles.labelActive : ''}
+                >
+                  Yearly
+                </label>
               </>
             )
           }}

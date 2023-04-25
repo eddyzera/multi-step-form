@@ -7,6 +7,7 @@ declare const classNames: {
   readonly proIcon: "proIcon";
   readonly containerFlex: "containerFlex";
   readonly switchContainer: "switchContainer";
+  readonly labelActive: "labelActive";
   readonly switchRoot: "switchRoot";
   readonly switchThumb: "switchThumb";
   readonly submitContainer: "submitContainer";
