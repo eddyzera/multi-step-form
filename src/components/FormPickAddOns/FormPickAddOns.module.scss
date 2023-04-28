@@ -2,16 +2,13 @@
 
 .formContainer {
   width: 100%;
-}
-
-.pickAddOnsContainer {
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
 }
 
-.pickAddOnsItem {
+.pickAddOnsContainer {
   width: 100%;
   padding: 20px 24px;
 
@@ -28,6 +25,14 @@
     border: 1px solid $purple-900;
     background-color: $gray-50;
   }
+}
+
+.pickAddOnsItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 24px;
 }
 
 .pickAddOnsIndicator {

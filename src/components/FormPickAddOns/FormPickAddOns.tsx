@@ -1,17 +1,14 @@
 import React from 'react'
-import * as RadioGroup from '@radix-ui/react-radio-group'
+import * as Checkbox from '@radix-ui/react-checkbox'
 import styles from './FormPickAddOns.module.scss'
 import { Button } from '../Button/Button'
 
 export const FormPickAddOns: React.FunctionComponent = () => {
   return (
     <form className={styles.formContainer}>
-      <RadioGroup.Root className={styles.pickAddOnsContainer}>
-        <RadioGroup.Item
-          value="online service"
-          className={styles.pickAddOnsItem}
-        >
-          <RadioGroup.Indicator
+      <Checkbox.Root className={styles.pickAddOnsContainer}>
+        <div className={styles.pickAddOnsItem}>
+          <Checkbox.Indicator
             className={styles.pickAddOnsIndicator}
             forceMount={true}
           />
@@ -20,12 +17,11 @@ export const FormPickAddOns: React.FunctionComponent = () => {
             <span>Access to multiplayer games</span>
           </div>
           <p className={styles.pickAddOnsPrice}>+$1/mo</p>
-        </RadioGroup.Item>
-        <RadioGroup.Item
-          value="Larger storage"
-          className={styles.pickAddOnsItem}
-        >
-          <RadioGroup.Indicator
+        </div>
+      </Checkbox.Root>
+      <Checkbox.Root className={styles.pickAddOnsContainer}>
+        <div className={styles.pickAddOnsItem}>
+          <Checkbox.Indicator
             className={styles.pickAddOnsIndicator}
             forceMount={true}
           />
@@ -34,12 +30,11 @@ export const FormPickAddOns: React.FunctionComponent = () => {
             <span>Extra 1TB of cloud save</span>
           </div>
           <p className={styles.pickAddOnsPrice}>+$2/mo</p>
-        </RadioGroup.Item>
-        <RadioGroup.Item
-          value="Customizable profile"
-          className={styles.pickAddOnsItem}
-        >
-          <RadioGroup.Indicator
+        </div>
+      </Checkbox.Root>
+      <Checkbox.Root className={styles.pickAddOnsContainer}>
+        <div className={styles.pickAddOnsItem}>
+          <Checkbox.Indicator
             className={styles.pickAddOnsIndicator}
             forceMount={true}
           />
@@ -48,8 +43,8 @@ export const FormPickAddOns: React.FunctionComponent = () => {
             <span>Custom theme on your profile</span>
           </div>
           <p className={styles.pickAddOnsPrice}>+$2/mo</p>
-        </RadioGroup.Item>
-      </RadioGroup.Root>
+        </div>
+      </Checkbox.Root>
       <div className={styles.submitContainer}>
         <Button label="Go Back" shape="anchor" />
         <Button label="Next Step" variant="blue" />
