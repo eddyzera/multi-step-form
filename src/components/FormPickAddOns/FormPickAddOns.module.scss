@@ -1,0 +1,61 @@
+@use '../../style/utils/variables.scss' as *;
+
+.formContainer {
+  width: 100%;
+}
+
+.pickAddOnsContainer {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.pickAddOnsItem {
+  width: 100%;
+  padding: 20px 24px;
+
+  background-color: $white-50;
+  border-radius: $border-sm;
+  border: 1px solid $blue-100;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.pickAddOnsIndicator {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  position: relative;
+
+  border: 1px solid $blue-100;
+  border-radius: 4px;
+  
+  &[data-state="checked"]::after {
+    content: '\2713';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+
+    background-color: $purple-900;
+    color: $white-50;
+    border-radius: 4px;
+  }
+}
+
+.pickAddOnsLabelContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.pickAddOnsPrice {}
