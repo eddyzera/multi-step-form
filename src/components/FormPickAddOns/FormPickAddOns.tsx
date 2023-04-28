@@ -1,6 +1,7 @@
 import React from 'react'
 import * as RadioGroup from '@radix-ui/react-radio-group'
 import styles from './FormPickAddOns.module.scss'
+import { Button } from '../Button/Button'
 
 export const FormPickAddOns: React.FunctionComponent = () => {
   return (
@@ -49,6 +50,10 @@ export const FormPickAddOns: React.FunctionComponent = () => {
           <p className={styles.pickAddOnsPrice}>+$2/mo</p>
         </RadioGroup.Item>
       </RadioGroup.Root>
+      <div className={styles.submitContainer}>
+        <Button label="Go Back" shape="anchor" />
+        <Button label="Next Step" variant="blue" />
+      </div>
     </form>
   )
 }

@@ -11,6 +11,5 @@ declare const classNames: {
   readonly switchRoot: "switchRoot";
   readonly switchThumb: "switchThumb";
   readonly submitContainer: "submitContainer";
-  readonly anchor: "anchor";
 };
 export = classNames;

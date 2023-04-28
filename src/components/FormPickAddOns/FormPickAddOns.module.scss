@@ -84,3 +84,11 @@
   line-height: 20px;
   color: $purple-900;
 }
+
+.submitContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 92px;
+}

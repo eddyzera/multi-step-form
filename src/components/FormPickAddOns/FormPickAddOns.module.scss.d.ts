@@ -5,5 +5,6 @@ declare const classNames: {
   readonly pickAddOnsIndicator: "pickAddOnsIndicator";
   readonly pickAddOnsLabelContainer: "pickAddOnsLabelContainer";
   readonly pickAddOnsPrice: "pickAddOnsPrice";
+  readonly submitContainer: "submitContainer";
 };
 export = classNames;
