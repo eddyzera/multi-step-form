@@ -4,5 +4,6 @@ declare const classNames: {
   readonly pickAddOnsItem: "pickAddOnsItem";
   readonly pickAddOnsIndicator: "pickAddOnsIndicator";
   readonly pickAddOnsLabelContainer: "pickAddOnsLabelContainer";
+  readonly pickAddOnsPrice: "pickAddOnsPrice";
 };
 export = classNames;

@@ -7,7 +7,7 @@
 .pickAddOnsContainer {
   display: flex;
   flex-direction: column;
-
+  gap: 16px;
   width: 100%;
 }
 
@@ -23,6 +23,11 @@
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+
+  &[data-state="checked"] {
+    border: 1px solid $purple-900;
+    background-color: $gray-50;
+  }
 }
 
 .pickAddOnsIndicator {
@@ -56,6 +61,26 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+
+  label {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    color: $blue-900;
+    margin-bottom: 7px;
+  }
+
+  span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: $gray-200;
+  }
 }
 
-.pickAddOnsPrice {}
+.pickAddOnsPrice {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: $purple-900;
+}

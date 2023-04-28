@@ -16,9 +16,37 @@ export const FormPickAddOns: React.FunctionComponent = () => {
           />
           <div className={styles.pickAddOnsLabelContainer}>
             <label>Online service</label>
-            <p>Access to multiplayer games</p>
+            <span>Access to multiplayer games</span>
           </div>
           <p className={styles.pickAddOnsPrice}>+$1/mo</p>
+        </RadioGroup.Item>
+        <RadioGroup.Item
+          value="Larger storage"
+          className={styles.pickAddOnsItem}
+        >
+          <RadioGroup.Indicator
+            className={styles.pickAddOnsIndicator}
+            forceMount={true}
+          />
+          <div className={styles.pickAddOnsLabelContainer}>
+            <label>Larger storage</label>
+            <span>Extra 1TB of cloud save</span>
+          </div>
+          <p className={styles.pickAddOnsPrice}>+$2/mo</p>
+        </RadioGroup.Item>
+        <RadioGroup.Item
+          value="Customizable profile"
+          className={styles.pickAddOnsItem}
+        >
+          <RadioGroup.Indicator
+            className={styles.pickAddOnsIndicator}
+            forceMount={true}
+          />
+          <div className={styles.pickAddOnsLabelContainer}>
+            <label>Customizable profile</label>
+            <span>Custom theme on your profile</span>
+          </div>
+          <p className={styles.pickAddOnsPrice}>+$2/mo</p>
         </RadioGroup.Item>
       </RadioGroup.Root>
     </form>
